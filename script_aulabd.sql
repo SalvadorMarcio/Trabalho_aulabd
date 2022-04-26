@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `aulabd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `aulabd`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: localhost    Database: aulabd
@@ -148,7 +146,7 @@ CREATE TABLE `professor` (
 
 LOCK TABLES `professor` WRITE;
 /*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES ('Hermenegildo Bonifácio','12345678900','hermenegildo@gmail.com','mestrado','M',1),('Rebeca Margarida','98765432100','rebecamarga@gmail','doutorado','F',2),('Rebeca Margarida','11122233344','rebecamarga@gmail','graduação','F',3);
+INSERT INTO `professor` VALUES ('Hermenegildo Bonifácio','12345678900','hermenegildo@gmail.com','mestrado','M',1),('Rebeca Margarida','98765432100','rebecamarga@gmail','doutorado','F',2),('Marionese Leite','11122233344','marionese@hotmail.com','graduação','F',3),('Astrogildo Girolane','00011122244','astro@hotmail.com','graduação','M',4);
 /*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +170,7 @@ CREATE TABLE `resposta` (
 
 LOCK TABLES `resposta` WRITE;
 /*!40000 ALTER TABLE `resposta` DISABLE KEYS */;
-INSERT INTO `resposta` VALUES (1,'insert into professor values (\'Hermenegildo Bonifácio\',\'12345678900\',\'hermenegildo@gmail.com\',\'mestrado\',\'M\',1),(\'Rebeca Margarida\',\'98765432100\',\'rebecamarga@gmail\',\'doutorado\',\'F\',2);'),(2,'Chave primária'),(3,'Chave estrangeira'),(4,'create table curso (id int(10) primary key, descricao varchar(50));'),(5,'create table alunos (id int auto_increment primary key, nome varchar(50), matricula varchar(10), estado varchar(2), sexo varchar(1), curso_id int, foreign key(curso_id)references curso(id));'),(6,'alter table alunos add email varchar(80);'),(7,'alter table professor drop telefone;'),(8,'update professor set sexo=\'M\';'),(9,'delete from professor where sexo=\'F\';'),(10,'select nome,matricula from alunos;'),(11,'select * from professor where sexo=\'M\';'),(12,'select alunos.nome,curso.descricao from alunos,curso where alunos.curso_id=curso.id;'),(13,'create table estado (id int auto_increment primary key, nome varchar(30), sigla varchar(2));         create table cidade (id int auto_increment primary key, nome varchar(50), estado_id int, foreign key(estado_id) references estado(id));'),(14,'select * from cidade where nome like \'A%\';'),(15,'select cidade.nome, estado.nome, estado.sigla from cidade, estado where cidade.estado_id = 1 and estado.id = 1;'),(16,'select cidade.nome, estado.nome,estado.sigla from cidade, estado where cidade.estado_id = estado.id;'),(17,'select LOWER(nome) from cidade;'),(18,'select UPPER(nome) from cidade;'),(19,'select estado.nome,estado.sigla,count(estado.id) from estado, cidade where estado.id=cidade.estado_id group by estado.id;');
+INSERT INTO `resposta` VALUES (1,'insert into professor values (\'Hermenegildo Bonifácio\',\'12345678900\',\'hermenegildo@gmail.com\',\'mestrado\',\'M\',1),(\'Rebeca Margarida\',\'98765432100\',\'rebecamarga@gmail\',\'doutorado\',\'F\',2);'),(2,'Chave primária'),(3,'Chave estrangeira'),(4,'create table curso (id int(10) primary key, descricao varchar(50));'),(5,'create table alunos (id int auto_increment primary key, nome varchar(50), matricula varchar(10), estado varchar(2), sexo varchar(1), curso_id int, foreign key(curso_id)references curso(id));'),(6,'alter table alunos add email varchar(80);'),(7,'alter table professor drop telefone;'),(8,'update professor set sexo=\'M\';'),(9,'delete from professor where sexo=\'F\';'),(10,'select nome,matricula from alunos;'),(11,'select * from professor where sexo=\'M\';'),(12,'select alunos.nome,curso.descricao from alunos,curso where alunos.curso_id=curso.id;'),(13,'create table estado (id int auto_increment primary key, nome varchar(30), sigla varchar(2));         create table cidade (id int auto_increment primary key, nome varchar(50), estado_id int, foreign key(estado_id) references estado(id));'),(14,'select * from cidade where nome like \'A%\';'),(15,'select cidade.nome, estado.nome, estado.sigla from cidade, estado where cidade.estado_id = 1 and estado.id = 1;'),(16,'select cidade.nome, estado.nome,estado.sigla from cidade, estado where cidade.estado_id = estado.id;'),(17,'select LOWER(nome) from cidade;'),(18,'select UPPER(nome) from cidade;'),(19,'select count(cidade.id), estado.sigla from cidade, estado where cidade.estado_id=estado.id group by estado.id');
 /*!40000 ALTER TABLE `resposta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -185,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-21 11:06:16
+-- Dump completed on 2022-04-26 19:10:54
